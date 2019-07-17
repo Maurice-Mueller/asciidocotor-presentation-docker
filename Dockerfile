@@ -1,6 +1,6 @@
 FROM debian:latest
 
-ARG revealjs_version=3.7.0
+ARG revealjs_version=3.8.0
 ARG decktape_version=2.9.3
 
 RUN apt-get update

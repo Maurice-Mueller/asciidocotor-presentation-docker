@@ -51,8 +51,9 @@ def buildSlidesPdf(composite)
   print "Building slides pdf...\n"
   workingDir = slidesPdfWorkingDir(composite)
   FileUtils.mkpath workingDir
-  inputFile = "file://#{$src_base + '/' + escapeString(revealJSOutFile(composite))}"
-  outputFile = "#{$src_base + '/' + escapeString(slidesPdfWorkingDir(composite) +'/' + composite) + '.pdf'}"
+
+  inputFile = "file://#{escapeString(revealJSOutFile(composite))}"
+  outputFile = "#{escapeString(slidesPdfWorkingDir(composite) +'/' + composite) + '.pdf'}"
   #%x(cd /asciidoc/lib/decktape && node decktape.js #{inputFile} #{outputFile})
   %x(cd /asciidoc/lib/decktape && node decktape.js --size 1238x875 #{inputFile} #{outputFile})
 end
