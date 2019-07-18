@@ -13,8 +13,8 @@ end
 
 def compositesDirectories
   currentDir = Dir.pwd
-  Dir.chdir($composites_dir)
-  dirs = Dir.glob('*').select {|f| File.directory? f}
+  Dir.chdir($root_dir)
+  dirs = Dir.glob('*').select {|f| File.directory? f and !(f.start_with? '.')}
   Dir.chdir(currentDir)
   return dirs
 end
