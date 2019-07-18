@@ -55,5 +55,5 @@ def buildSlidesPdf(composite)
   inputFile = "file://#{escapeString(revealJSOutFile(composite))}"
   outputFile = "#{escapeString(slidesPdfWorkingDir(composite) +'/' + composite) + '.pdf'}"
   #%x(cd /asciidoc/lib/decktape && node decktape.js #{inputFile} #{outputFile})
-  %x(cd /asciidoc/lib/decktape && node decktape.js --size 1238x875 #{inputFile} #{outputFile})
+  print(%x(cd /asciidoc/lib/decktape && node decktape --chrome-arg=--no-sandbox --size 1238x875 #{inputFile} #{outputFile}))
 end
