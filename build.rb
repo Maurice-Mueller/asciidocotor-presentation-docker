@@ -27,6 +27,7 @@ end
 
 def buildAsciiDocHtml(composite)
   print "Building asciidoc html...\n"
+  generateDirectoryStructure(composite)
   _compositeDir = compositeDir(composite)
   workingDir =  _compositeDir + $html_out_dir
 
@@ -38,6 +39,7 @@ end
 
 def buildAsciiDocPdf(composite)
   print "Building asciidoc pdf...\n"
+  generateDirectoryStructure(composite)
   _compositeDir = compositeDir(composite)
   workingDir = _compositeDir + $asciidoc_pdf_out_dir
   pdf_images_dir_temp = _compositeDir + $pdf_images_dir
@@ -52,6 +54,7 @@ end
 
 def buildSlidesPdf(composite)
   print "Building slides pdf...\n"
+  generateDirectoryStructure(composite)
   workingDir = compositeDir(composite) + $slides_pdf_out_dir
  
   FileUtils.mkpath workingDir
