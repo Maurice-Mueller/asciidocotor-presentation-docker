@@ -1,4 +1,4 @@
 *.swp
-tests/out/**/*
 tests/**/*
 out/**/*
+.idea

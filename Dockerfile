@@ -1,13 +1,16 @@
-FROM debian:latest
+FROM debian:buster-slim
 
 ARG revealjs_version=3.8.0
 ARG decktape_version=2.9.3
 
+# fix for using slim (does not include man directory)
+RUN mkdir -p /usr/share/man/man1
+
 RUN apt-get update
-RUN apt-get install -y wget unzip ruby-full curl make g++
+RUN apt-get install -y wget unzip ruby curl make g++
 
 # for plantuml
-RUN apt-get install -y default-jre
+RUN apt-get install -y default-jre-headless
 RUN apt-get install -y graphviz
 
 # for chrome headless
@@ -50,6 +53,8 @@ libnss3 \
 lsb-release \
 xdg-utils \
 wget
+
+RUN apt-get autoremove -y
 
 RUN curl -sL https://deb.nodesource.com/setup_12.x | bash -
 RUN apt-get install -y nodejs
