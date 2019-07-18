@@ -17,7 +17,7 @@ def buildRevealJS(composite)
   FileUtils.mkpath workingDir
   copyResources(_compositeDir, "#{workingDir}/static")
   FileUtils.copy_entry "/asciidoc/lib/revealjs", "#{workingDir}/reveal.js"
-  FileUtils.copy_entry "#{_compositeDir + $revealjs_config_dir}", "#{workingDir}/config"
+  FileUtils.copy_entry "/asciidoc/revealjs_config", "#{workingDir}/config"
 
   attributes = "imagesdir=static revealjsdir=reveal.js revealjs_theme=#{$theme} customcss=config/revealjs.css"
   attributes += customAttributesFor(composite)

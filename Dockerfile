@@ -74,7 +74,7 @@ RUN npm install
 
 WORKDIR /asciidoc
 
-WORKDIR /asciidoc
+RUN mkdir revealjs_config
 
 COPY Gemfile Gemfile
 RUN bundle install
@@ -84,6 +84,8 @@ COPY config.rb config.rb
 COPY extensions.rb extensions.rb
 COPY build.rb build.rb
 COPY Rakefile Rakefile
+
+COPY revealjs.css revealjs_config/revealjs.css
 
 RUN mkdir /presentations
 

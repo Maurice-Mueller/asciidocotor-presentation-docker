@@ -21,7 +21,6 @@ def generateDirectoryStructure(composite)
   FileUtils.mkpath _compositeDir + $image_dir
   FileUtils.mkpath _compositeDir + $video_dir
   FileUtils.mkpath _compositeDir + $generated_images_dir
-  FileUtils.mkpath _compositeDir + $revealjs_config_dir
 
   FileUtils.mkpath revealjsOutDir(composite)
 end
