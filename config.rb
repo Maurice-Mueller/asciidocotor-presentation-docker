@@ -22,6 +22,8 @@ $html_out_dir = $out_dir + '/html'
 $asciidoc_pdf_out_dir = $out_dir + '/pdf'
 $slides_pdf_out_dir = $out_dir + '/pdf'
 
+$revealjs_config_dir = $resources_dir + '/revealjs_config'
+
 # SETTINGS
 $custom_attributes = ''
 

@@ -33,7 +33,7 @@ task :'build-all' do
     buildRevealJS(composite)
     buildSlidesPdf(composite)
     buildAsciiDocHtml(composite)
-    buildAsciidocPdf(composite)
+    buildAsciiDocPdf(composite)
   }
 end
 
@@ -46,7 +46,19 @@ end
 
 task :'build-pdf' do
   buildingComposites(ARGV).each {|composite|
-    buildAsciidocPdf(composite)
+    buildAsciiDocPdf(composite)
+  }
+end
+
+task :'build-pdf-slides' do
+  buildingComposites(ARGV).each {|composite|
+    buildSlidesPdf(composite)
+  }
+end
+
+task :'build-html' do
+  buildingComposites(ARGV).each {|composite|
+    buildAsciiDocHtml(composite)
   }
 end
 
