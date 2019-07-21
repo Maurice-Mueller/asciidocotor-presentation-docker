@@ -59,6 +59,51 @@ Or access java source code like this: `include::{java-dir}/subfolder/code.java[]
 | build-all        | all targets                    |
 
 
+### Speaker notes
+
+Speaker notes will appear in all targets. If you want a speaker note only
+in revealjs-target use the following:
+
+````
+speaker-only::begin[]
+This note will be only available in revealjs.
+speaker-only::end[]
+````
+
+### Advanced fragments
+
+You can turn every part of the presentation into a fragment:
+
+````
+fragment::begin[]
+Content of the fragment. You can even use asciidoc macros here.
+fragment::end[]
+````
+
+### Footer
+
+You can use the footer macro to have a nice footer in the revealjs presentation:
+
+```
+footer::[CONTENT LEFT FOOTER, CONTENT MIDDLE FOOTER, CONTENT RIGHT FOOTER]
+```
+
+*You need to have a whitespace if you do not want to use one or two of the other footers.*
+
+##### Footer examples:
+
+An image on the left bottom (from `resources/images`):
+
+``
+footer::[<img src="static/image_file.png" height="40px"></img>, , ]
+``
+
+Text in the center:
+``
+footer::[ , My text, ]
+``
+
+
 ## Dev section
 
 * build image
