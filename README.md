@@ -70,6 +70,18 @@ This note will be only available in revealjs.
 speaker-only::end[]
 ````
 
+### Slides only stuff
+
+Sometimes you need stuff only appear on the slides (e.g. some questions to the auditorium).
+
+You can use the following to achieve that:
+
+````
+slides-only::begin[]
+All inbetween will only appear on the slides but not on the other output formats (e.g. HTML).
+slides-only::end[]
+````
+
 ### Advanced fragments
 
 You can turn every part of the presentation into a fragment:
