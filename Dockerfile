@@ -84,17 +84,29 @@ RUN mkdir revealjs_config
 COPY Gemfile Gemfile
 RUN bundle install
 
-COPY common.rb common.rb
-COPY config.rb config.rb
-COPY extensions.rb extensions.rb
-COPY build.rb build.rb
-COPY Rakefile Rakefile
-
-COPY revealjs.css revealjs_config/revealjs.css
-
 RUN mkdir /presentations
 
 RUN chmod 777 -R /presentations
 RUN chmod 777 -R /asciidoc
+
+
+COPY common.rb common.rb
+RUN chmod 777 common.rb
+
+COPY config.rb config.rb
+RUN chmod 777 config.rb
+
+COPY extensions.rb extensions.rb
+RUN chmod 777 extensions.rb
+
+COPY build.rb build.rb
+RUN chmod 777 build.rb
+
+COPY Rakefile Rakefile
+RUN chmod 777 Rakefile
+
+COPY revealjs.css revealjs_config/revealjs.css
+RUN chmod 777 -R revealjs_config/
+
 
 ENTRYPOINT ["bundle", "exec", "rake"]
