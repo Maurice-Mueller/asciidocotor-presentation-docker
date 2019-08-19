@@ -115,6 +115,19 @@ Text in the center:
 footer::[ , My text, ]
 ``
 
+## Known bugs
+
+In a fragment section (i.e. `fragment::begin[]` and `fragment::end[]`) you cannot use a normal title / heading i.e.
+`==== My Title` but you need to use a *discrete* title:
+
+````
+[discrete]
+==== My Discrete Title
+````
+
+If you don't add the discrete the title will not be rendered like a title but will be shown as plain text.
+
+Shortcomings are, that a discrete title does not appear in the table of contents or anywhere else.
 
 ## Dev section
 
