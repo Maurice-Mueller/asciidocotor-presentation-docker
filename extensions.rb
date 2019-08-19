@@ -53,7 +53,7 @@ Asciidoctor::Extensions.register do
   end
 end
 
-# fragment::begin[] and fragment::end[] will be replaced with 'pass:[<p class="fragment">]' resp. 'pass:[</p>]'
+# fragment::begin[] and fragment::end[] will be replaced with '[.fragment]\n====' resp. '===='
 # for revealjs backend. For all other backends both will be skipped.
 Asciidoctor::Extensions.register do
   preprocessor do
@@ -68,10 +68,10 @@ Asciidoctor::Extensions.register do
         elsif l.start_with? 'fragment::begin[]'
           # returnLines.push('pass:[<p class="fragment">]')
           returnLines.push('[.fragment]')
-          returnLines.push('--')
+          returnLines.push('====')
           next
         elsif l.start_with? 'fragment::end[]'
-          returnLines.push('--')
+          returnLines.push('====')
           # returnLines.push('pass:[</p>]')
           next
         end
